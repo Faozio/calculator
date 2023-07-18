@@ -1,6 +1,3 @@
-Sure, here is a README.md for the GitHub repository:
-
-```
 # Calculator
 
 A simple calculator that can perform basic mathematical operations.
@@ -32,4 +29,3 @@ A simple calculator that can perform basic mathematical operations.
 ## License
 
 The code in this repository is licensed under the MIT License.
-```
