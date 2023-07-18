@@ -14,7 +14,7 @@ const clearButton = document.querySelector('.clear');
 const equalsButton = document.querySelector('.equals');
 
 // Variable to store the current calculation
-let calculation = '';
+let calculation = '0';
 
 // Function to update the display
 function updateDisplay() {
@@ -24,7 +24,11 @@ function updateDisplay() {
 // Add event listeners to number buttons
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
-    calculation += button.value;
+    if (calculation === '0') {
+      calculation = button.value;
+    } else {
+      calculation += button.value;
+    }
     updateDisplay();
   });
 });
@@ -39,13 +43,13 @@ operatorButtons.forEach(button => {
 
 // Clear button event listener
 clearButton.addEventListener('click', () => {
-  calculation = '';
+  calculation = '0';
   updateDisplay();
 });
 
 // Equals button event listener
 equalsButton.addEventListener('click', () => {
-  // Use JavaScript's eval function to perform the calculation
   calculation = eval(calculation);
   updateDisplay();
+  calculation = '0';
 });
